@@ -9,10 +9,10 @@ apps= []
 def addApp():
   filename= filedialog.askopenfilename(initialdir="/", title="Select a File", 
                                         filetypes=(("executables", "*.exe"), ("All files", "*.*")))
-  apps.append(filename)
+  apps.append(filename) #store to array
   print(filename)
   for app in apps:
-    label =tk.Label(frame, text=app, bg="grey")
+    label =tk.Label(frame, text=app, bg="grey") #label them
     label.pack()
    
 
