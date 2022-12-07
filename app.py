@@ -28,6 +28,6 @@ openFile.pack()
 
 runApps = tk.Button(root, text="Run Apps", padx=10, pady=5, fg="white", bg="#263D42")
 
-runApps.pack()
+runApps.pack() #this adds the button to the apps
 
 root.mainloop()
