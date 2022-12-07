@@ -7,6 +7,9 @@ apps= []
 
 
 def addApp():
+  for widget in frame.winfo_children(): #deletes old widgets
+    widget.destroy()
+  
   filename= filedialog.askopenfilename(initialdir="/", title="Select a File", 
                                         filetypes=(("executables", "*.exe"), ("All files", "*.*")))
   apps.append(filename) #store to array
@@ -14,7 +17,10 @@ def addApp():
   for app in apps:
     label =tk.Label(frame, text=app, bg="grey") #label them
     label.pack()
-   
+
+def runApps(): #executes app when run app button is clicked
+  for app in apps:
+    os.startfile(app)   
 
 canvas = tk.Canvas(root, height=700, width=700, bg="#263D42")
 canvas.pack()
@@ -26,7 +32,7 @@ openFile = tk.Button(root, text="Open File", padx=10, pady=5, fg="white", bg="#2
 
 openFile.pack()
 
-runApps = tk.Button(root, text="Run Apps", padx=10, pady=5, fg="white", bg="#263D42")
+runApps = tk.Button(root, text="Run Apps", padx=10, pady=5, fg="white", bg="#263D42", command=runApps) #command = runs the runApps function
 
 runApps.pack() #this adds the button to the apps
 
