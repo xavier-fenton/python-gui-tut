@@ -53,3 +53,9 @@ root.mainloop()
 with open('save.txt', 'w') as f:
   for app in apps:
     f.write(app + ',')
+    
+    
+    
+    
+# Challanges for myself:
+# I could try write a way of just showing the app name. So we don't see the directory.
